@@ -1,0 +1,64 @@
+@import "./assets/sass/base/normalize";
+@import "./assets/sass/abstract/constants";
+@import "./assets/sass/abstract/placeholders";
+@import "./assets/sass/abstract/mixins";
+
+@import "./assets/sass/base/buttons";
+
+@import "./assets/sass/layouts/wrapper";
+@import "./assets/sass/layouts/header";
+
+@import "./assets/sass/components/cards";
+@import "./assets/sass/components/back-to-top";
+@import "./assets/sass/layouts/columns";
+@import "./assets/sass/layouts/footer";
+@import "./assets/sass/base/base";
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 67px;
+    color: $color-light;
+    @include screen1200 {
+        font-size: 42px;
+        line-height: 48px;;
+    }
+    @include media-mobile {
+        font-size: 34px;
+        line-height: 45px;;
+    }
+}
+
+h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 45px;
+    color: $color-light;
+    @include media-mobile {
+        font-size: 20px;
+        line-height: 25px;
+    }
+    @include screen1200 {
+        font-size: 24px;
+        line-height: 30px;;
+    }
+}
+
+h5 {
+    margin: 0;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: $color-light;
+}
