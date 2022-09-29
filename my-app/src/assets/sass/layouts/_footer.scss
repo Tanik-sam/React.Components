@@ -1,65 +1,55 @@
 .footer {
     background: $color-word-black;
+    height: 120px;
+    padding: 10px;
     @include media-tablet {
       padding: 0 10px 0 10px;
   }
 }
-.footer__wrapper{
-  padding-top: 40px;
-}
-.footer__column {
-  @extend %font-prim;
-  display: flex;
-  @include media-tablet {
-      flex-direction: column;
-  }
-}
-.column_second{
-  padding-top: 23px;
-}
 
-.footer-navigation__title {
-  margin: 0 0 15px;
-}
-
-.footer-navigation__links {
-  color:$color-light;
-  @extend %font-prim;
-  a {
-      text-decoration: none;
-      color:$color-light;
-      &:hover {
-          color: $color-orange;
-      }
-  }
-  &>li{
-    padding: 10px 0 10px 0;
-  }
-}
-.messangers{
+.footer-navigation{
+  align-items: center;  
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  gap:20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &__title{
+    color: $color-light;
+  }
+ 
+}
+
+.footer__link{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.person-link{
+white-space: nowrap;
+text-decoration: none;
+color: $color-light;
+font-weight: 600;
+transition: .3s;
+&:hover{
+color: $color-orange-hover;
+}
 }
 .logo-object{
-    background-image: url("../../icons/Logo_footer.svg");
-    width: 240px;
-    height: 90px;
-    background-size: auto;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: url("../../icons/Logo.svg");
+  width: 136px;
+  height: 60px;
+  background-size: auto;
+  background-repeat: no-repeat;
 }
-hr{
-  background: $color-light;
+.footer-navigation__column{
+display: block;
+display: flex;
+margin: 0 auto;
+justify-content: center;
+
 }
-.footer__rights{
-  padding: 10px 0 20px 0;
-  display:flex;
-  flex-direction: row;
-  justify-content: left;
-  gap:16px;
-  &>:nth-child(1){
-  flex-grow: 3;
-  }
+.logo-object:hover{
+transition: .3s;
+filter: invert(100);
 }

@@ -20,3 +20,4 @@ export interface IData {
   date: string;
   like: number;
 }
+

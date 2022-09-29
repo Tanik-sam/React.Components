@@ -2,7 +2,7 @@ import React from 'react';
 import { MyProps, MyState, IData } from '../interfaces';
 import data from '../data.json';
 
-class Header extends React.Component<IData[], { goods: IData[] }> {
+class Header extends React.Component<any, { goods: IData[] }> {
   constructor(props: IData[]) {
     super(props);
     this.state = { goods: data };
@@ -33,6 +33,7 @@ class Header extends React.Component<IData[], { goods: IData[] }> {
         }
       });
       console.log(newArr);
+      this.props.cbSearchChanged(newArr);
     };
     return (
       <div>
