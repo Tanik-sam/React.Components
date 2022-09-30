@@ -1,18 +1,23 @@
 import React from 'react';
-import { MyProps, IData } from '../../interfaces';
+import { IData } from '../../interfaces';
 import data from '../../data.json';
 import Cards from '../../components/cards';
 
-class Main extends React.Component<MyProps, { dataState: IData[]; input: string }> {
-  constructor(props: MyProps) {
-    super(props);
-    this.state = { dataState: data, input: '' };
-  }
-  searchChanged = (dataChanged: IData[]) => {
-    this.setState({ dataState: dataChanged });
+class Main extends React.Component<Record<string, unknown>, { dataState: IData[]; input: string }> {
+  state = { dataState: data, input: '' };
+  searchChanged = (dataChanged: IData[], inputChanged: string) => {
+    console.log(inputChanged);
+    this.setState({ dataState: dataChanged, input: inputChanged }, () => {
+      localStorage.setItem('value', this.state.input);
+    });
+    console.log(this.state.input);
   };
-  componentWillUnmount() {
-    console.log('WillMount');
+  componentWillUnmount(): void {
+    console.log('WillUnmount');
+  }
+  componentDidMount(): void {
+    console.log('DidMount');
+    this.setState({ input: localStorage.value || '' });
   }
   render() {
     const cards = this.state.dataState.map((card) => (
@@ -37,7 +42,7 @@ class Main extends React.Component<MyProps, { dataState: IData[]; input: string 
       const input: string = (document.getElementById('search') as HTMLInputElement).value;
       const arr = [...this.state.dataState];
       if (!input) {
-        this.searchChanged(data);
+        this.searchChanged(data, input);
       } else {
         const newArr: IData[] = arr.filter((obj: IData) => {
           let k: keyof IData;
@@ -52,9 +57,10 @@ class Main extends React.Component<MyProps, { dataState: IData[]; input: string 
             }
           }
         });
-        this.searchChanged(newArr);
+        this.searchChanged(newArr, input);
       }
     };
+    const value = this.state.input || '';
     return (
       <div>
         <div className="header__search">
@@ -65,6 +71,7 @@ class Main extends React.Component<MyProps, { dataState: IData[]; input: string 
             placeholder="Поиск"
             className="search"
             onChange={search}
+            value={value}
           />
         </div>
         <section className="cards">

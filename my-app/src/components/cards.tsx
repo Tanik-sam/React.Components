@@ -3,8 +3,8 @@ import { IData } from '../interfaces';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-class Cards extends React.Component<any, any> {
-  constructor(props: IData[]) {
+class Cards extends React.Component<IData, Record<string, unknown>> {
+  constructor(props: IData) {
     super(props);
   }
   render() {

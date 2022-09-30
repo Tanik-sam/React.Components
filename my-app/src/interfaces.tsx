@@ -1,10 +1,4 @@
-export interface MyProps {
-  name:string;
-}
 
-export interface MyState {
-  value: string;
-}
 export interface IData {
   position: number;
   category: string;

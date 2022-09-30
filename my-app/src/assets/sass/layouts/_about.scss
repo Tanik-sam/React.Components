@@ -1,5 +1,5 @@
 .about {
-    padding: 20px;
+    padding: 20px 20px 0 0;
     background-color: $color-transp-black;
     background-image: url("../../images/courses_img_bckg.svg");
     background-position-x: 67%;
@@ -8,14 +8,29 @@
     display: flex;
     flex-direction: column;
     min-height: calc(100vh - 160px);
-    justify-content: center;
+    justify-content: space-between;
+}
+.about__paragraph {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 .about__title {
+    padding-left: 20px;
     text-align: center;
     margin: auto;
     @extend %font-prim;
     color: $color-light;
-    font-size: 32px;
-    padding-top:20px;
+    font-size: 42px;
+    padding-top:30px;
     margin:0;
+}
+.about__image {
+    align-self:flex-start;
+    justify-self: start;
+    width:1000px;
+    height: 505px;
+    background-image: url("../../images/aboutNo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }

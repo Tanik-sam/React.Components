@@ -8,9 +8,9 @@ class NotFoundPage extends React.Component {
         <div className="no-found__image"></div>
         <div className="no-found__block">
           <p className="no-found__text">- Что там?</p>
-          <p className="no-found__text">- По крайней мере там нет страницы, которую вы ищете.</p>
+          <p className="no-found__text">- По крайней мере там нет страницы, которую ты ищешь.</p>
           <p className="no-found__text">
-            Поворачивайте
+            Поворачивай
             <Link to="/" style={{ color: '#F4D011', textDecoration: 'none', paddingLeft: '10px' }}>
               на главную!
             </Link>

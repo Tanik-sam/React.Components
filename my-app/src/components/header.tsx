@@ -1,5 +1,5 @@
 import React from 'react';
-import { MyProps, MyState, IData } from '../interfaces';
+import { IData } from '../interfaces';
 import data from '../data.json';
 
 class Header extends React.Component<any, { goods: IData[] }> {

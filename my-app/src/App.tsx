@@ -46,7 +46,7 @@ function App() {
         </div>
       </header>
       <Routes>
-        <Route path="/" element={<Main name="Изделия из дерева" />} />
+        <Route path="/" element={<Main />} />
         <Route path="/nofound" element={<NotFoundPage />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
