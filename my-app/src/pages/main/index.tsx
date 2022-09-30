@@ -4,20 +4,21 @@ import data from '../../data.json';
 import Cards from '../../components/cards';
 
 class Main extends React.Component<Record<string, unknown>, { dataState: IData[]; input: string }> {
-  state = { dataState: data, input: '' };
+  state = { dataState: data, input: localStorage.value || '' };
+
   searchChanged = (dataChanged: IData[], inputChanged: string) => {
     console.log(inputChanged);
     this.setState({ dataState: dataChanged, input: inputChanged }, () => {
-      localStorage.setItem('value', this.state.input);
+      localStorage.setItem('value', inputChanged);
     });
     console.log(this.state.input);
   };
-  componentWillUnmount(): void {
-    console.log('WillUnmount');
-  }
   componentDidMount(): void {
-    console.log('DidMount');
-    this.setState({ input: localStorage.value || '' });
+    console.log('componentdidmount()');
+  }
+  componentWillUnmount(): void {
+    console.log('componentWillUnmount()');
+    localStorage.setItem('value', this.state.input);
   }
   render() {
     const cards = this.state.dataState.map((card) => (

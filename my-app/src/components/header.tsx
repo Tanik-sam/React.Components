@@ -46,7 +46,6 @@ class Header extends React.Component<any, { goods: IData[] }> {
             </div>
             <div className="header__search">
               <input
-                id="search"
                 type="text"
                 name="text"
                 placeholder="Поиск"
