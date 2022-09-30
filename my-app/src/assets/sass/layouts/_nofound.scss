@@ -1,0 +1,43 @@
+.no-found{
+    padding-top: 20px;
+    background-color: $color-transp-black;
+    background-image: url("../../images/courses_img_bckg.svg");
+    background-position-x: 67%;
+    background-position-y: 50%;
+margin:auto;
+display: flex;
+flex-direction: column;
+    min-height: calc(100vh - 160px);
+}
+.no-found__block{
+    width: 100%;
+    align-self:center;
+    background: $color-primary;
+    padding: 20px 0 20px 0;
+}
+.no-found__text{
+    margin:auto;
+    max-width:700px;
+    @extend %font-prim;
+    font-weight: 500;
+    color: $color-light;
+    font-size: 42px;
+    padding:10px;
+}
+
+.no-found__image{
+    align-self:flex-end;
+    width:1000px;
+    height: 505px;
+    background-image: url("../../images/404.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.no-found__404{
+    align-self:flex-start;
+    @extend %font-prim;
+    color: $color-orange;
+    font-size: 240px;
+    font-weight: 700;
+    padding: 20px;
+}

@@ -56,6 +56,10 @@
 }
    
 .header__search {
+    position: absolute;
+    width: 300px;
+    top: 20px;
+    left: 55%;
     background: $color-light;
     @extend %font-prim;
     padding: 10px 20px;

@@ -1,0 +1,21 @@
+.about {
+    padding: 20px;
+    background-color: $color-transp-black;
+    background-image: url("../../images/courses_img_bckg.svg");
+    background-position-x: 67%;
+    background-position-y: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 160px);
+    justify-content: center;
+}
+.about__title {
+    text-align: center;
+    margin: auto;
+    @extend %font-prim;
+    color: $color-light;
+    font-size: 32px;
+    padding-top:20px;
+    margin:0;
+}
