@@ -48,7 +48,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/nofound" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route path="/about" element={<AboutUs />} />
         </Routes>
         <footer className="footer">
