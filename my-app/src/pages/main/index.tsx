@@ -3,15 +3,17 @@ import { IData } from '../../interfaces';
 import data from '../../data.json';
 import Cards from '../../components/cards';
 
-class Main extends React.Component<Record<string, unknown>, { dataState: IData[]; input: string }> {
-  state = { dataState: data, input: localStorage.value || '' };
+class Main extends React.Component<
+  Record<string, unknown>,
+  { dataState: IData[]; input: string; formAddShow: boolean }
+> {
+  state = { dataState: data, input: localStorage.value || '', formAddShow: false };
 
   searchChanged = (dataChanged: IData[], inputChanged: string) => {
     console.log(inputChanged);
     this.setState({ dataState: dataChanged, input: inputChanged }, () => {
       localStorage.setItem('value', inputChanged);
     });
-    console.log(this.state.input);
   };
   componentDidMount(): void {
     console.log('componentdidmount()');
@@ -62,6 +64,9 @@ class Main extends React.Component<Record<string, unknown>, { dataState: IData[]
       }
     };
     const value = this.state.input || '';
+    const addCard = () => {
+      this.setState({ formAddShow: true });
+    };
     return (
       <div>
         <div className="header__search">
@@ -81,6 +86,13 @@ class Main extends React.Component<Record<string, unknown>, { dataState: IData[]
               Изделия <span className="title_yellow"> из дерева </span>
             </h1>
             <p className="cards__text">Сделай акцент на уникальность.</p>
+            <div className="about__buttons">
+              <a className="header__link" href="/addForm">
+                <div className="button" onClick={addCard}>
+                  Добавить карточку
+                </div>
+              </a>
+            </div>
             <div className="layout-2-column cards-wrapper">{cards}</div>
           </div>
         </section>

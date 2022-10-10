@@ -4,6 +4,7 @@ import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import NotFoundPage from './pages/404/index';
 import AboutUs from './pages/about/index';
+import FormAddCard from './pages/formAddCard/index';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/*" element={<NotFoundPage />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/addForm" element={<FormAddCard />} />
         </Routes>
         <footer className="footer">
           <div className="wrapper footer__wrapper">

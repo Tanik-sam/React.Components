@@ -1,0 +1,122 @@
+    .form-add{
+        padding: 20px 20px 0 0;
+        background-color: $color-transp-black;
+        background-image: url("../../images/courses_img_bckg.svg");
+        background-position-x: 67%;
+        background-position-y: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 160px);
+        align-items: center;
+        justify-content: center;
+    }
+    .form-add__name {
+        margin-top: 80px;
+        @extend %font-prim;
+        color: $color-orange;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 45px;
+    }
+    .form-add__table {
+        position: relative;
+        margin: auto;
+        min-width: 580px;
+        padding: 40px;
+        background-color: $color-background-gray;
+        box-shadow: 0px 3px 4px rgba(153, 153, 153, 0.25), 0px -3px 4px rgba(153, 153, 153, 0.1);
+        border-radius: 10px;
+        width: 50%;
+        @include screen610 {
+            min-width: 500px;
+        }
+    
+        @include media-mobile {
+            min-width: 350px;
+        }
+    
+        @include media-mobilesmall {
+            min-width: 290px;
+        }
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    .form-add__text {
+        text-align: left;
+        margin:10px 0 20px 0; 
+        @extend %font-prim;
+        font-size: 1.5rem;
+        color: $color-primary;
+    }
+    .form-add__color {
+        margin-left: 20px;
+        width: 60px;
+        height: 40px;
+        border-width: 0;
+        padding: 0;
+        box-shadow: 0px 3px 4px rgba(153, 153, 153, 0.25), 0px -3px 4px rgba(153, 153, 153, 0.1);
+    }
+
+    .incorrect {
+        margin-top: 10px;
+        display: block;
+        @extend %font-prim;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $color-red;
+    }
+    
+.checkbox {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    top: 9px;
+	left: 26px;
+	z-index: 1000;
+	opacity: 0;
+	margin: 0 20px 10px 20px;
+    cursor: pointer;
+}
+.checkbox + label {
+    margin-left: -50px;
+	position: relative;
+	padding: 0 0 0 60px;
+
+}
+.checkbox + label:before {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 20px;
+	width: 40px;
+	height: 26px;
+	border-radius: 13px;
+	background: #CDD1DA;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+	transition: .2s;
+}
+.checkbox + label:after {
+	content: '';
+	position: absolute;
+	top: 6px;
+	left: 21px;
+	width: 22px;
+	height: 22px;
+	border-radius: 10px;
+	background: #FFF;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	transition: .2s;
+}
+.checkbox:checked + label:before {
+	background: $color-orange-active;
+}
+.checkbox:checked + label:after {
+	left: 37px;
+}
+.checkbox:focus + label:before {
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.2), 0 0 0 3px $color-orange-hover;
+}

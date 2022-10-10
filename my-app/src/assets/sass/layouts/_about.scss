@@ -34,3 +34,21 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+.about__buttons{
+    margin-top:26px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 40px;
+    &>button{
+        width:320px;
+    }
+    @include media-tablet {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
